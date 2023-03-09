@@ -1,38 +1,42 @@
-Опис проекту
-Даний проект є API сервісом для прогнозування кластеру клієнтів магазину за допомогою навченого моделю кластеризації.
+# Description of the project
+This project is an API service for predicting a cluster of store customers using a trained clustering model.
 
-Встановлення та запуск проекту
-Клонуйте репозиторій до свого комп'ютера: git clone https://github.com/username/repository.git.
-Перейдіть до папки проекту: cd repository.
-Встановіть всі необхідні залежності: pip install -r requirements.txt.
-Запустіть файл main.py: python main.py.
-Відкрийте браузер та перейдіть до адреси http://127.0.0.1:8000/docs.
-Виконайте запит POST до шляху /predict, введіть необхідні дані та натисніть кнопку Try it out!.
-Отримайте результат від API сервісу.
-Використання
-API сервіс підтримує запити POST до шляху /predict з обов'язковим введенням даних у вигляді JSON-об'єкта з наступними полями:
+## Installation and launch of the project
+1. Clone the repository to your computer: `git clone https://github.com/Tarbian/Mall_Customers.git`
+2. Go to the project folder: `cd Mall_Customers`
+3. Install all necessary dependencies: `pip install -r requirements.txt`
+4. Run the main.py file: `python main.py`
+5. Enter the required data and perform a POST request to the `/predict` path
+6. Get the result from the service API
 
-male: стать клієнта (чоловік - 1, жінка - 0);
-age: вік клієнта;
-income: рівень доходу клієнта;
-score: оцінка покупок клієнта.
-Приклад запиту:
+## Usage
+The API service supports POST requests to the `/predict` path with mandatory data input in the form of a JSON object with the following fields (examples in the folder `tests`):
 
-json
-Copy code
+* male: gender of the client (male - 1, female - 0);
+* age: age of the client (18 - 80);
+* income: the client's income level;
+* score: evaluation of the client's purchases (0 - 100).
+
+Example request:
+
+```json
 {
-  "male": 1,
-  "age": 25,
-  "income": 50000,
-  "score": 80
+   "male": 1,
+   "age": 25,
+   "income": 50000,
+   "score": 80
 }
-API сервіс поверне JSON-об'єкт з одним полем:
+```
+The API service will return a JSON object with one field. Example answer:
 
-cluster: номер кластеру, до якого належить клієнт.
-Приклад відповіді:
-
-json
-Copy code
+```json
 {
-  "cluster": 2
+   "cluster": 2
 }
+```
+
+### Process
+You can view the model creation process, some graphs, or make your changes in the Jupiter-notebook in the `notebooks` folder.
+
+### License
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
