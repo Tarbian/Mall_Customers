@@ -15,7 +15,7 @@ The API service supports POST requests to the `/predict` path with mandatory dat
 * male: gender of the client (male - 1, female - 0);
 * age: age of the client (18 - 80);
 * income: the client's income level;
-* score: evaluation of the client's purchases (0 - 100).
+* score: spending score (0 - 100).
 
 Example request:
 
